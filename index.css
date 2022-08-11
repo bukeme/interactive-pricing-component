@@ -40,6 +40,7 @@ h1 {
     color: var(--text-and-cta-background);
     font-size: 3rem;
     font-weight: 600;
+    text-align: center;
 }
 
 p {
@@ -143,7 +144,7 @@ p {
 
 .pricing-component__billing p {
     font-size: 1.4rem;
-    margin: 0 2rem;
+    margin: 0 calc(0.5rem + 1.5vw);
 }
 
 .pricing-component__billing p:nth-child(3) {
@@ -160,6 +161,7 @@ p {
     background-color: var(--toggle-background);
     border-radius: 1.3rem;
     cursor: pointer;
+    flex-shrink: 0;
 }
 
 .pricing-component__billing input[type='checkbox']:checked {
@@ -240,7 +242,7 @@ button:hover {
         height: initial;
     }
     .pricing-component {
-        width: initial;
+        width: 90%;
     }
     .pricing-component__plan {
         flex-direction: column;
