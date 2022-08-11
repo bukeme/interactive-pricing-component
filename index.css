@@ -243,6 +243,7 @@ button:hover {
     }
     .pricing-component {
         width: 90%;
+        margin-bottom: 3rem;
     }
     .pricing-component__plan {
         flex-direction: column;
