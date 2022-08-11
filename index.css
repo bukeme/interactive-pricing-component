@@ -1,0 +1,266 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Primary */
+    --full-slider-background: hsl(174, 77%, 80%);
+    --slider-background: hsl(174, 86%, 45%);
+    --discount-background: hsl(14, 92%, 95%);
+    --discount-text: hsl(15, 100%, 70%);
+    /* Neutral */
+    --pricing-component-background: hsl(0, 0%, 100%);
+    --main-background: hsl(230, 100%, 99%);
+    --empty-slider-bar: hsl(224, 65%, 95%);
+    --toggle-background: hsl(223, 50%, 87%);
+    --text: hsl(225, 20%, 60%);
+    --text-and-cta-background: hsl(227, 35%, 25%);
+    font-size: 62.5%;
+}
+
+body {
+    background: url('images/bg-pattern.svg') no-repeat top center fixed, var(--main-background);
+    background-size: 100% auto, auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Manrope', sans-serif;
+}
+
+.header {
+    background: url('images/pattern-circles.svg') no-repeat center top;
+    padding: 40px 0;
+}
+
+h1 {
+    color: var(--text-and-cta-background);
+    font-size: 3rem;
+    font-weight: 600;
+}
+
+p {
+    color: var(--text);
+    font-size: 1.6rem;
+}
+
+.trial-message {
+    text-align: center;
+    margin-top: 0.5rem;
+    font-weight: 600;
+}
+
+.pricing-component {
+    background-color: var(--pricing-component-background);
+    padding: 2rem;
+    border-radius: 0.6rem;
+    margin-top: 3rem;
+    width: 55rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.pricing-component__plan {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.pricing-component__plan--pageviews {
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.pricing-component__plan--cost {
+    display: flex;
+    align-items: center;
+}
+
+.pricing-component__plan--cost__plan {
+    font-size: 3.5rem;
+    color: var(--text-and-cta-background);
+    font-weight: 800;
+}
+
+.pricing-component__plan input[type='range'] {
+    width: 100%;
+    height: 8px;
+    margin: 2.5rem 0;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: linear-gradient(to right, var(--full-slider-background) 0%, var(--full-slider-background) 44.44444%, var(--empty-slider-bar) 44.44444%, var(--empty-slider-bar) 100%);
+    border-radius: 5px;
+}
+
+.pricing-component__plan input[type='range']::-webkit-slider-thumb {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    background: url('images/icon-slider.svg') no-repeat center center, var(--slider-background);
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    cursor: pointer;
+}
+
+.pricing-component__plan input[type='range']:hover::-webkit-slider-thumb {
+    background: url('images/icon-slider.svg') no-repeat center center, hsl(174, 86%, 55%);
+}
+
+.pricing-component__plan input[type='range']:active::-webkit-slider-thumb {
+    background: url('images/icon-slider.svg') no-repeat center center, hsl(174, 86%, 35%);
+}
+
+.pricing-component__plan input[type='range']::-moz-range-thumb {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    background: url('images/icon-slider.svg') no-repeat center center, var(--slider-background);
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    cursor: pointer;
+}
+
+.pricing-component__plan input[type='range']:hover::-moz-range-thumb {
+    background: url('images/icon-slider.svg') no-repeat center center, hsl(174, 86%, 55%);
+}
+
+.pricing-component__plan input[type='range']:active::-moz-range-thumb {
+    background: url('images/icon-slider.svg') no-repeat center center, hsl(174, 86%, 35%);
+}
+
+.pricing-component__billing {
+    margin: 2.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pricing-component__billing p {
+    font-size: 1.4rem;
+    margin: 0 2rem;
+}
+
+.pricing-component__billing p:nth-child(3) {
+    margin-right: 0.5rem;
+}
+
+.pricing-component__billing input[type='checkbox'] {
+    border: none;
+    outline: none;
+    appearance: none;
+    width: 5rem;
+    height: 2.5rem;
+    position: relative;
+    background-color: var(--toggle-background);
+    border-radius: 1.3rem;
+    cursor: pointer;
+}
+
+.pricing-component__billing input[type='checkbox']:checked {
+    background-color: var(--full-slider-background);
+}
+
+.pricing-component__billing input[type='checkbox']:hover {
+    background-color: var(--full-slider-background);
+}
+
+.pricing-component__billing input[type='checkbox']::before {
+    position: absolute;
+    content: '';
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 0.8rem;
+    background-color: var(--pricing-component-background);
+    top: 0.5rem;
+    left: 0.5rem;
+    transition: all 0.35s ease-in-out;
+}
+
+.pricing-component__billing input:checked[type='checkbox']::before {
+    left: 3rem;
+}
+
+.pricing-component__billing--discount {
+    padding: 0.5rem;
+    border-radius: 1rem;
+    background-color: var(--discount-background);
+    color: var(--discount-text);
+    margin: 0 !important;
+    font-size: 1rem !important;
+    font-weight: 600;
+}
+
+hr {
+    height: 0;
+    border: 0;
+    border-top: 0.5px solid var(--text);
+}
+
+.pricing-component__offers__start {
+    display: flex;
+    justify-content: space-between;
+    margin: 2rem 0;
+    align-items: center;
+}
+
+.pricing-component__offers__item {
+    display: flex;
+    align-items: center;
+    margin: 1rem 0;
+}
+
+.pricing-component__offers__item p {
+    margin-left: 1rem;
+}
+
+button {
+    border: none;
+    outline: none;
+    background-color: var(--text-and-cta-background);
+    color: var(--text);
+    padding: 1.5rem 4rem;
+    border-radius: 3.5rem;
+    box-shadow: 0 2px 4px hsl(227, 35%, 65%), 0 4px 8px hsl(227, 35%, 75%);
+    cursor: pointer;
+}
+
+button:hover {
+    box-shadow: 0 2px 4px hsl(227, 35%, 65%);
+    color: var(--pricing-component-background);
+}
+
+@media screen and (max-width: 600px) {
+    body {
+        height: initial;
+    }
+    .pricing-component {
+        width: initial;
+    }
+    .pricing-component__plan {
+        flex-direction: column;
+    }
+    .pricing-component__plan--cost {
+        order: 1;
+    }
+    .pricing-component__billing--discount span {
+        display: none;
+    }
+    .pricing-component__offers__start {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .pricing-component__offers__item {
+        display: flex;
+        justify-content: center;
+    }
+    button {
+        display: block;
+        margin: 2rem auto;
+    }
+}
