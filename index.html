@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="icon" href="images/favicon-32x32.png" type="image/png" sizes="32x32">
+    <title>Interactive Pricing Component</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <div class="header">
+        <h1>Simple, traffic-based pricing</h1>
+        <p class="trial-message">Sign-up for out 30-day trial. No credit card required</p>
+    </div>
+    <div class="pricing-component">
+        <div class="pricing-component__plan">
+            <p class="pricing-component__plan--pageviews">100K pageviews</p>
+            <p class="pricing-component__plan--cost"><span class="pricing-component__plan--cost__plan">$16.00</span> <span>/month</span></p>
+            <input type="range" min="10" max="100" step="5" value="50">
+        </div>
+        <div class="pricing-component__billing">
+            <p>Monthly Billing</p>
+            <input type="checkbox">
+            <p>Yearly Billing</p>
+            <p class="pricing-component__billing--discount">25% <span>discount</span></p>
+        </div>
+        <hr>
+        <div class="pricing-component__offers__start">
+            <div class="pricing-component__offers">
+                <div class="pricing-component__offers__item">
+                    <img src="images/icon-check.svg" alt="">
+                    <p>Unlimited websites</p>
+                </div>
+                <div class="pricing-component__offers__item">
+                    <img src="images/icon-check.svg" alt="">
+                    <p>100% data ownership</p>
+                </div>
+                <div class="pricing-component__offers__item">
+                    <img src="images/icon-check.svg" alt="">
+                    <p>Email reports</p>
+                </div>
+            </div>
+            <div class="pricing-component__start">
+                <button>Start my trial</button>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="index.js"></script>
+</body>
+
+</html>
